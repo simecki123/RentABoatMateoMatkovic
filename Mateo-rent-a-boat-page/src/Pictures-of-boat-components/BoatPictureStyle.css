@@ -1,0 +1,143 @@
+/* Styling for BoatPictureComponent */
+
+.custom-shape-divider-top-1712592141 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1712592141 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-top-1712592141 .shape-fill {
+    fill: #fcfae6;
+}
+
+.custom-shape-divider-bottom-1712656412 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1712656412 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1712656412 .shape-fill {
+    fill: #fcfae6;
+}
+
+
+
+/* Boat Picture Container styles */
+.boat-picture-container {
+    position: relative;
+}
+
+/* Boat Image Wrapper styles */
+.boat-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.boat-image {
+    width: 100%;
+    height: auto;
+    max-height: 700px; /* Maintain aspect ratio */
+    display: block;
+}
+
+.content-overlay {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.centered {
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #0c1f30;
+}
+
+.social-media-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+}
+
+.social-media-button {
+    width: 67px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-media-icons a {
+    margin: 0 10px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.change-image-btn {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2); /* Translucent background color */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .social-media-icons a {
+        font-size: 1.5rem;
+    }
+
+    .change-image-btn {
+        right: 10px; /* Adjust position for smaller screens */
+    }
+}

@@ -21,6 +21,7 @@ function BoatsForRentComponent() {
                 <div className='allboats-for-rent'>
                     {boats.map((boat, index) => (
                         <BoatCardComponent key={index} boat={boat} />
+                        
                     ))}
                 </div>
             </div>

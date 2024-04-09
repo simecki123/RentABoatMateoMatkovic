@@ -36,7 +36,7 @@ function BoatPictureComponent() {
                 <img className="boat-image" src={boatImages[currentImageIndex]} alt="Boat" />
                 <div className="content-overlay">
                     <div className="centered">
-                        <h2>Rent a Boat</h2>
+                        <h2 className='rent-a-boat-title'>Rent a Boat</h2>
                         <div className="social-media-icons">
                             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                 <button className='social-media-button'><img className='social-media-icon' src={instagram} alt="Instagram" /></button>

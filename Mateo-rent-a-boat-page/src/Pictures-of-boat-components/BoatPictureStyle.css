@@ -56,8 +56,8 @@
 
 .boat-image {
     width: 100%;
-    height: auto;
-    max-height: 700px; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 700px;
     display: block;
 }
 

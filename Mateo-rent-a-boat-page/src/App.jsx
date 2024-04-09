@@ -1,16 +1,18 @@
 
 import './App.css'
-import HeaderComponent from './HeaderComponents/HeaderComponent'
-import BoatPictureComponent from './Pictures-of-boat-components/BoatPictureComponent'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPageComponent from './MainPageComponent/MainPageComponent';
+
 
 function App() {
   
 
   return (
-    <>
-      <HeaderComponent />
-      <BoatPictureComponent />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainPageComponent />} />
+      </Routes>
+    </Router>
   )
 }
 

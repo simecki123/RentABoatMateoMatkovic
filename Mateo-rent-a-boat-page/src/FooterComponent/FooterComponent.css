@@ -1,0 +1,82 @@
+.footer {
+    background-color: #1e1e2e;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Align text to the left within the container */
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-footer {
+    width: 120px;
+    height: auto;
+    border-radius: 10%;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+
+.contacts,
+.footer-links,
+.social-media {
+    flex: 1;
+    padding: 0 10px;
+    text-align: left; /* Align text within each section to the left */
+}
+
+.social-media-icons {
+    display: flex !important;
+    
+    align-items: center !important;
+}
+
+.social-media-icon-footer {
+    width: 50px !important;
+    height: 50px !important;
+    margin-right: 10px !important;
+    cursor: pointer !important;
+    
+}
+
+.divider {
+    border: 1px solid #ffffff;
+    margin: 20px 0;
+}
+
+.attribution {
+    font-size: 0.8rem;
+    text-align: left; /* Align text within the attribution section to the left */
+}
+
+.options {
+    color: #ffffff;
+
+}
+.options:hover{
+    color: aqua;
+}
+
+.attribution a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+    }
+}

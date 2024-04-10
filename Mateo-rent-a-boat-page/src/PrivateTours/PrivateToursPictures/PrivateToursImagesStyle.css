@@ -1,0 +1,90 @@
+
+.custom-shape-divider-top-1712770032 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1712770032 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 41px;
+}
+
+.custom-shape-divider-top-1712770032 .shape-fill {
+    fill: #FCFAE6;
+}
+
+.custom-shape-divider-bottom-1712770095 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1712770095 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 41px;
+}
+
+.custom-shape-divider-bottom-1712770095 .shape-fill {
+    fill: #FCFAE6;
+}
+
+/* Boat Picture Container styles */
+.private-tours-images-container {
+    position: relative;
+}
+
+/* Boat Image Wrapper styles */
+.location-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.location-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 700px;
+    display: block;
+}
+
+
+
+
+
+
+.change-location-image-btn {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2); /* Translucent background color */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+
+
+    .change-location-image-btn {
+        right: 10px; /* Adjust position for smaller screens */
+    }
+}
+

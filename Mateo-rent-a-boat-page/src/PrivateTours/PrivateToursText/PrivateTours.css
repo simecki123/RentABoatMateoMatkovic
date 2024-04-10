@@ -1,0 +1,28 @@
+/* TermsOfUseTextComponent.css */
+
+.private-tours-text-container {
+    /* Create a linear gradient from #fcfae6 to #d96820 */
+    background-color: #fcfae6;
+    
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+}
+
+.private-tours-text-small-container {
+    background-color: #1e1e2ecc; /* Darker background for the inner container */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.private-tours-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    margin-bottom: 10px;
+}
+
+.private-tours-text {
+    font-size: 16px;
+    color: #ffffff; /* White text */
+    line-height: 1.6;
+}

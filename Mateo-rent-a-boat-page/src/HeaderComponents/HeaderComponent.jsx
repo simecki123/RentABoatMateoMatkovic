@@ -106,10 +106,10 @@ function HeaderComponent() {
                         </button>
                         {navMenuOpen && (
                             <div className="nav-menu">
-                                <a className='options-header' href='#boats-for-rent'>Boats for Rent</a>
+                                <a className='options-header' href='/#boats-for-rent'>Boats for Rent</a>
                                 <a className='options-header' href='/privateTours' >Private Tours</a>
                                 <a className='options-header' href='/termsOfUse' >Terms of use</a>
-                                <a className='options-header' href='#contacts' >Contacts</a>
+                                <a className='options-header' href='/#contacts' >Contacts</a>
                             </div>
                         )}
                     </div>

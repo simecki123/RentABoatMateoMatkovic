@@ -19,7 +19,9 @@ function BoatCardComponent({ boat }) {
                 <p className='data'><strong>Engine:</strong> {engine}</p>
                 <p className='data'><strong>Number of persons:</strong> {persons}</p>
                 <p className='data'><strong>Price:</strong> {price}</p>
-                <button className='see-more-btn'>See more &#8680;</button>
+                <a href='/rentBoat'>
+                    <button className='see-more-btn'  >See more &#8680;</button>
+                </a>
             </div>
         </div>
     );

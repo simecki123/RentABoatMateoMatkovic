@@ -1,0 +1,83 @@
+/* Rental Prices Big Container */
+.rental-prices-big-container {
+    background-color: #fcfae6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+/* Rental Prices Title */
+.rental-prices-title {
+    font-family: Arial, sans-serif;
+    color: #0c1f30;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Rental Prices Main Container */
+.rental-prices-main-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Rental Prices Small Container */
+.rental-prices-small-container {
+    background-color: #1e1e2ecc;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%; /* Adjust width for smaller screens */
+}
+
+/* Rental Prices List */
+.rental-prices-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Rental Price Item */
+.rental-price {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 1px solid #ffffff;
+    margin: 10px 0;
+}
+
+/* Rental Note List */
+.rental-price-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Rental Note Item */
+.rental-note {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Media Query for Smaller Screens (e.g., Smartphones) */
+@media (max-width: 768px) {
+    .rental-prices-big-container {
+        background-color: #fcfae6;
+        padding: 0px;
+        border-radius: 0px;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+        margin-bottom: 0px;
+    }
+
+    .rental-prices-main-container {
+        flex-direction: column; /* Stack containers vertically on smaller screens */
+    }
+
+    .rental-prices-small-container {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px; /* Add spacing between containers */
+    }
+}

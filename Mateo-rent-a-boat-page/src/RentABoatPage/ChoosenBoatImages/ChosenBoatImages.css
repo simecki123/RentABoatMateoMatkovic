@@ -38,3 +38,17 @@ body{
     cursor: pointer;
     object-fit: cover; /* Maintain aspect ratio and cover container */
 }
+
+
+/* Media Query for Smaller Screens (e.g., Smartphones) */
+@media (max-width: 768px) {
+    .chosen-boat-big-image-container {
+        max-width: 300px; /* Adjust maximum width for smaller screens */
+    }
+
+    .chosen-boat-small-image {
+        width: 60px; /* Reduce width of small images for smaller screens */
+        height: 60px; /* Reduce height of small images for smaller screens */
+    }
+}
+

@@ -1,9 +1,10 @@
-
+/* Boat Description and Title Container */
 .boat-description-and-title-container {
     background-color: #fcfae6;
-    
+    padding: 20px; /* Add padding for spacing */
 }
 
+/* Boat Description Title Styling */
 .boat-description-title {
     margin-left: 5%;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,21 +12,38 @@
     font-size: 2rem;
 }
 
+/* Boat Description Main Container */
 .boat-description-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #1e1e2ecc; /* Dark overlay for text contrast */
     color: #ffffff;
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     width: 80%;
     margin: 0 auto;
-    
 }
 
+/* Boat Description Text */
 .boat-description {
-    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+/* Media Query for Smaller Screens (e.g., Smartphones) */
+@media (max-width: 768px) {
+    .boat-description-container {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .boat-description-title {
+        font-size: 1.5rem; /* Reduce title font size for smaller screens */
+    }
+
+    .boat-description {
+        font-size: 1rem; /* Reduce text font size for smaller screens */
+    }
 }

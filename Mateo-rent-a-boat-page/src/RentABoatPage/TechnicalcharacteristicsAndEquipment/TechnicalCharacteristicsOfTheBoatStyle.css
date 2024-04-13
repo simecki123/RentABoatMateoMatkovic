@@ -1,0 +1,66 @@
+/* Technical Characteristics and Additional Equipment Container */
+.technical-characteristics-and-additioanl-equipment-container {
+    background-color: #fcfae6;
+    padding: 20px;
+}
+
+/* Title Styling */
+.technical-characteristics-and-additional-equipment-title {
+    margin-left: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0c1f30;
+    font-size: 2rem;
+}
+
+/* Main Container for Characteristics and Equipment */
+.techical-characteristics-and-additional-equipment-small-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #1e1e2ecc;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Container for Technical Characteristics */
+.technical-characteristics-container,
+.additional-equipment-container {
+    flex: 1;
+    padding: 10px;
+}
+
+/* List Styles */
+.unordered-list-technical-characteristics-and-additional-equipment {
+    list-style: none;
+    padding: 0;
+}
+
+.list-technical-characteristics-and-additional-equipment {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Media Query for Smaller Screens (e.g., Smartphones) */
+@media (max-width: 768px) {
+    .techical-characteristics-and-additional-equipment-small-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .technical-characteristics-container,
+    .additional-equipment-container {
+        width: 100%;
+    }
+
+    .technical-characteristics-and-additional-equipment-title {
+        font-size: 1.5rem;
+    }
+
+    .list-technical-characteristics-and-additional-equipment {
+        font-size: 1rem;
+    }
+}

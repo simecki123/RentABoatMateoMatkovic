@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import boat1 from '../../assets/boat1.jpg';
-import boat2 from '../../assets/boat2.jpg';
-import boat3 from '../../assets/boat3.jpg';
-import boat4 from '../../assets/boat4.jpg';
-import boat5 from '../../assets/boat5.jpg';
-import boat6 from '../../assets/boat6.jpg';
+import PropTypes from 'prop-types';
 import './ChosenBoatImages.css';
 import Modal from './ModalComponent';
 
-function ChosenBoatImagesComponent() {
-    const [allImages] = useState([boat1, boat2, boat3, boat4, boat5, boat6])
-    const [currentImage, setCurrentImage] = useState(allImages[0]);
-    const [smallImages] = useState(allImages.slice(1));
+function ChosenBoatImagesComponent({ boat }) {
+    const { img, images } = boat; // Destructure the 'img' and 'images' properties from the 'boat' prop
+    const allImages = Object.values(images); // Convert images object values to an array
+
+    const [currentImage, setCurrentImage] = useState(img);
+    const [smallImages] = useState(allImages.slice(0, 5)); // Slice to get the first 5 small images
     const [visibleImagesIndex, setVisibleImagesIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -77,5 +74,12 @@ function ChosenBoatImagesComponent() {
         </div>
     );
 }
+
+ChosenBoatImagesComponent.propTypes = {
+    boat: PropTypes.shape({
+        img: PropTypes.string.isRequired,
+        images: PropTypes.objectOf(PropTypes.string).isRequired, // 'images' should be an object of strings (image URLs)
+    }).isRequired,
+};
 
 export default ChosenBoatImagesComponent;

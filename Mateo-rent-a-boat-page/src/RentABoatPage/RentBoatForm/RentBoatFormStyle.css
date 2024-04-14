@@ -78,9 +78,13 @@ body {
   }
   
   /* Logo Container */
-  .logo-container {
+  .logo-in-form-container {
     width: 150px;
     text-align: right;
+  }
+
+  .error-message {
+    color: #ff0000;
   }
   
   .logo-in-form {

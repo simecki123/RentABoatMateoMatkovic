@@ -124,7 +124,7 @@ function RentABoatFormComponent() {
                                     value="07e223af-d705-4551-a5f6-fcd705f6d17b"
                                 />
                             </div>
-                            <div className='logo-container'>
+                            <div className='logo-in-form-container'>
                                 <img className='logo-in-form' src={logo} alt="Logo" />
                             </div>
                         </div>

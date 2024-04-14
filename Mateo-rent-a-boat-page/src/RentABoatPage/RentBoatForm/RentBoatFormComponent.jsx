@@ -3,13 +3,19 @@ import './RentBoatFormStyle.css';
 import logo from '../../assets/MatinLogo.png';
 
 function RentABoatFormComponent() {
-    const [selectedDate, setSelectedDate] = useState('');
+    const [startRentDate, setStartRentDate] = useState('');
+    const [endRentDate, setEndRentDate] = useState('');
     const [formError, setFormError] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const handleDateChange = (event) => {
-        const selectedDateString = event.target.value;
-        setSelectedDate(selectedDateString);
+    const handleStartDateChange = (event) => {
+        const startDateString = event.target.value;
+        setStartRentDate(startDateString);
+    };
+
+    const handleEndDateChange = (event) => {
+        const endDateString = event.target.value;
+        setEndRentDate(endDateString);
     };
 
     const handleSubmit = async (event) => {
@@ -24,7 +30,8 @@ function RentABoatFormComponent() {
             { field: 'Name and surname', errorMessage: 'Please fill in your name and surname.' },
             { field: 'email', errorMessage: 'Please enter a valid email address.' },
             { field: 'phone-number', errorMessage: 'Please enter a valid mobile number (e.g., 095-356-587).' },
-            { field: 'rent-date', errorMessage: 'Please select a date for renting the boat.' },
+            { field: 'start-rent-date', errorMessage: 'Please select a start date for renting the boat.' },
+            { field: 'end-rent-date', errorMessage: 'Please select an end date for renting the boat.' },
             { field: 'iagree-checkbox', errorMessage: 'Please agree to the terms and conditions.' }
         ];
 
@@ -48,16 +55,12 @@ function RentABoatFormComponent() {
                 setFormError(errorMessage);
                 return;
             }
+        }
 
-            if (field === 'rent-date' && !value) {
-                setFormError(errorMessage);
-                return;
-            }
-
-            if (field === 'iagree-checkbox' && value !== 'Agreed') {
-                setFormError(errorMessage);
-                return;
-            }
+        // Additional validation for date range
+        if (new Date(endRentDate) <= new Date(startRentDate)) {
+            setFormError('End date must be after the start date.');
+            return;
         }
 
         // Submit the form
@@ -93,16 +96,27 @@ function RentABoatFormComponent() {
                                 <input name='email' type='text' placeholder='something@gmail.com' />
                                 <label className='input-label'>Mobile number</label>
                                 <input name='phone-number' type='text' placeholder='095-356-587' />
-                                <label className='input-label'>Date</label>
+                                <label className='input-label'>Start Date</label>
                                 <input
                                     type='date'
-                                    value={selectedDate}
-                                    onChange={handleDateChange}
+                                    value={startRentDate}
+                                    onChange={handleStartDateChange}
                                 />
                                 <input
-                                    name='rent-date'
+                                    name='start-rent-date'
                                     type='hidden'
-                                    value={selectedDate}
+                                    value={startRentDate}
+                                />
+                                <label className='input-label'>End Date</label>
+                                <input
+                                    type='date'
+                                    value={endRentDate}
+                                    onChange={handleEndDateChange}
+                                />
+                                <input
+                                    name='end-rent-date'
+                                    type='hidden'
+                                    value={endRentDate}
                                 />
                                 <input
                                     type="hidden"
@@ -126,7 +140,7 @@ function RentABoatFormComponent() {
                     </form>
                 ) : (
                     <div className="submission-success">
-                        <p className='input-label'>Thank you for your submission!</p>
+                        <p className='input-label'>Thank you for renting. We will contact you soon!</p>
                         {/* You can add additional content or a link here */}
                     </div>
                 )}

@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  /* Rent A Boat Form Container */
+  .rent-aboat-form-container {
+    background: linear-gradient(to bottom, #fcfae6, #d96820);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+  }
+  
+  /* Rent A Boat Form Title */
+  .rent-aboat-form-title {
+    text-align: center;
+    font-size: 2rm;
+    margin-bottom: 20px;
+    color: #d96820;
+    border-bottom: 2px solid #d96820;
+    padding-bottom: 5px;
+  }
+  
+  /* Rent A Boat Form */
+  .rent-aboat-form {
+    background-color: #1e1e2ecc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  /* Important Data and Logo Container */
+  .important-data-and-logo-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+  }
+  
+  /* Important Data Container */
+  .important-data-container {
+    flex: 1;
+    margin-right: 10px; /* Add some spacing between elements */
+  }
+  
+  /* Input Label */
+  .input-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Input Fields */
+  .rent-aboat-form input[type="text"],
+  .rent-aboat-form input[type="number"],
+  .rent-aboat-form input[type="date"]
+  {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  .rent-aboat-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Logo Container */
+  .logo-container {
+    width: 150px;
+    text-align: right;
+  }
+  
+  .logo-in-form {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Message, Checkbox, Button Container */
+  .message-checkbox-button-container {
+    margin-top: 20px;
+  }
+  
+  .message-checkbox-button-container textarea {
+    height: 100px;
+  }
+  
+  /* Checkbox and Label */
+  .message-checkbox-button-container input[type="checkbox"] {
+    margin-top: 10px;
+    
+  }
+  
+  .message-checkbox-button-container label {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* Agreement Text */
+  .message-checkbox-button-container p {
+    font-size: 0.8em;
+    color: #ddd;
+    margin-top: 5px;
+  }
+  
+  /* Book the Boat Button */
+  .book-the-boat {
+    background-color: #d96820;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .rent-aboat-form-container {
+      padding: 15px;
+    }
+  
+    .important-data-container,
+    .logo-container {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px; /* Add spacing between stacked elements */
+    }
+  
+    .logo-container {
+      text-align: center; /* Center logo on smaller screens */
+    }
+  }
+  

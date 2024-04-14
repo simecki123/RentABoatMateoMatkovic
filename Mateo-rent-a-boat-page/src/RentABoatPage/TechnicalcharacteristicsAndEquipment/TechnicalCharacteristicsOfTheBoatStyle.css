@@ -16,7 +16,7 @@
 .techical-characteristics-and-additional-equipment-small-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; 
+    justify-content: space-around;
     background-color: #1e1e2ecc;
     color: #ffffff;
     padding: 20px;
@@ -24,6 +24,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     width: 80%;
     margin: 0 auto;
+}
+.technical-characteristics-title {
+    color: #fff;
 }
 
 /* Container for Technical Characteristics */

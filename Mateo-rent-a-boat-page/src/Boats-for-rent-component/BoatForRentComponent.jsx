@@ -4,12 +4,13 @@ import boat1 from '../assets/boat1.jpg';
 
 function BoatsForRentComponent() {
     const boats = [{
+        "id": 1,
         "img": boat1,
         "name": "August",
         "length": "6.3m",
         "width": "2.3m",
         "engine": "Destroyer69",
-        "persons": "6",
+        "persons": 6,
         "price": "from 400€"
     }];
 

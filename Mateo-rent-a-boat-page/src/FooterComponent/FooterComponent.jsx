@@ -3,8 +3,10 @@ import logo from '../assets/MatinLogo.png';
 import instagram from '../assets/instagram.png';
 import facebook from '../assets/facebook.png';
 import './FooterComponent.css'; // Import CSS for FooterComponent
+import { useTranslation } from 'react-i18next';
 
 function FooterComponent() {
+    const { t } = useTranslation();
 
 
     const handleInstagramClick = () => {
@@ -29,13 +31,13 @@ function FooterComponent() {
                         <p>📧 mateo15@gmail.com</p>
                     </div>
                     <div className="footer-links">
-                        <p ><a className='options' href='#boats-for-rent'>Boats for Rent</a></p>
-                        <p ><a className='options' href='/privateTours' >Private Tours</a></p>
-                        <p><a className='options' href='/termsOfUse' >Terms of use</a></p>
-                        <p><a className='options' href='#contacts' >Contacts</a></p>
+                        <p ><a className='options' href='#boats-for-rent'>{t("option1")}</a></p>
+                        <p ><a className='options' href='/privateTours' >{t("option2")}</a></p>
+                        <p><a className='options' href='/termsOfUse' >{t("option3")}</a></p>
+                        <p><a className='options' href='#contacts' >{t("option4")}</a></p>
                     </div>
                     <div className="social-media">
-                        <p>Follow us:</p>
+                        <p>{t("followUs")}</p>
                         <div className="social-media-icons">
                             <img
                                 className="social-media-icon-footer"
@@ -50,8 +52,8 @@ function FooterComponent() {
                                 onClick={handleFacebookClick}
                             />
                         </div>
-                        <p>Payment methods:</p>
-                        <p>All payments are made on the spot by appointment</p>
+                        <p>{t("paymentMethods")}</p>
+                        <p>{t("paymentText")}</p>
                     </div>
                 </div>
                 <hr className="divider" />

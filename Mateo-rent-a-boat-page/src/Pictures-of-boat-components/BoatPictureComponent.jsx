@@ -12,8 +12,11 @@ import boat3 from '../assets/boat3.jpg';
 import boat4 from '../assets/boat4.jpg';
 import boat5 from '../assets/boat5.jpg';
 import boat6 from '../assets/boat6.jpg';
+import { useTranslation } from 'react-i18next';
 
 function BoatPictureComponent() {
+const { t } = useTranslation();
+
     const boatImages = [boat1, boat2, boat3, boat4, boat5, boat6];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -36,7 +39,7 @@ function BoatPictureComponent() {
                 <img className="boat-image" src={boatImages[currentImageIndex]} alt="Boat" />
                 <div className="content-overlay">
                     <div className="centered">
-                        <h2 className='rent-a-boat-title'>Rent a Boat</h2>
+                        <h2 className='rent-a-boat-title'>{t("rentABoat")}</h2>
                         <div className="social-media-icons">
                             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                                 <button className='social-media-button'><img className='social-media-icon' src={instagram} alt="Instagram" /></button>

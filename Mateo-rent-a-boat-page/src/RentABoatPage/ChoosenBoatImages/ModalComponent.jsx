@@ -16,7 +16,7 @@ function Modal({ images, initialIndex, onClose }) {
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="modal-close" onClick={onClose}>Close</button>
+                <button className="modal-close" onClick={onClose}>X</button>
                 <div className="modal-image-container">
                     <img className="modal-image" src={images[currentIndex]} alt={`Boat ${currentIndex + 1}`} />
                 </div>

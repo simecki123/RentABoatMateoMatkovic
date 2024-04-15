@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './BoatCard.css'; // Import CSS for BoatCardComponent
+import { useTranslation } from 'react-i18next';
 
 function BoatCardComponent({ boat }) {
+    const { t } = useTranslation();
     const { id, img, name, length, width, engine, persons, price } = boat;
 
     return (
@@ -15,13 +17,13 @@ function BoatCardComponent({ boat }) {
                 </div>
             </div>
             <div className="boat-info">
-                <p className='data'><strong>Length:</strong> {length}</p>
-                <p className='data'><strong>Width:</strong> {width}</p>
-                <p className='data'><strong>Engine:</strong> {engine}</p>
-                <p className='data'><strong>Number of persons:</strong> {persons}</p>
-                <p className='data'><strong>Price:</strong> {price}</p>
+                <p className='data'><strong>{t("boatLength")}</strong> {length}</p>
+                <p className='data'><strong>{t("boatWidth")}</strong> {width}</p>
+                <p className='data'><strong>{t("boatEngine")}</strong> {engine}</p>
+                <p className='data'><strong>{t("numOfPersons")}</strong> {persons}</p>
+                <p className='data'><strong>{t("boatPrice")}</strong> {price}</p>
                 <Link to={`/rentBoat/${id}`}>
-                    <button className='see-more-btn'>See more &#8680;</button>
+                    <button className='see-more-btn'>{t("seeMore")}&#8680;</button>
                 </Link>
             </div>
         </div>

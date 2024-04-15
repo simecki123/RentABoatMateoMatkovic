@@ -1,8 +1,10 @@
 import React from 'react';
 import profilePic from '../assets/profile-pic.jpg';
 import './AboutUsStyle.css'; // Import CSS for AboutUsComponent
+import { useTranslation } from 'react-i18next';
 
 function AboutUsComponent() {
+    const { t } = useTranslation();
     return (
         <div className="about-us-container">
             <div className="about-us-content">
@@ -10,11 +12,9 @@ function AboutUsComponent() {
                     <img className="profile-picture" src={profilePic} alt='profile-picture' />
                 </div>
                 <div className="text-container">
-                    <h2 className='about-us-title'>Meet Our Team</h2>
+                    <h2 className='about-us-title'>{t("meetOurTeam")}</h2>
                     <p className='about-us-text'>
-                        We are a team of passionate individuals dedicated to delivering innovative solutions.
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-                        Proin ullamcorper, velit id tincidunt ultrices, ligula eros ultricies risus, non consequat justo metus ac turpis.
+                        {t("aboutUsText")}
                     </p>
                 </div>
             </div>

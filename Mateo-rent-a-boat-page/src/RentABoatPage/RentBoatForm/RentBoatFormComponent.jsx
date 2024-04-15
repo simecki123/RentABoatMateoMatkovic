@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './RentBoatFormStyle.css';
 import logo from '../../assets/MatinLogo.png';
+import { useTranslation } from 'react-i18next';
 
 function RentABoatFormComponent() {
+    const { t } = useTranslation();
+
     const [startRentDate, setStartRentDate] = useState('');
     const [endRentDate, setEndRentDate] = useState('');
     const [formError, setFormError] = useState('');
@@ -85,18 +88,18 @@ function RentABoatFormComponent() {
     return (
         <>
             <div className='rent-aboat-form-container'>
-                <h2 className='rent-aboat-form-title'>Rent this boat</h2>
+                <h2 className='rent-aboat-form-title'>{t("rentThisBoat")}</h2>
                 {!isSubmitted ? (
                     <form className='rent-aboat-form' onSubmit={handleSubmit}>
                         <div className='important-data-and-logo-container'>
                             <div className='important-data-container'>
-                                <label className='input-label'>Name and surname</label>
+                                <label className='input-label'>{t("nameSurname")}</label>
                                 <input name='Name and surname' type='text' placeholder='John Snow' />
-                                <label className='input-label'>E-mail</label>
+                                <label className='input-label'>{t("Email")}</label>
                                 <input name='email' type='text' placeholder='something@gmail.com' />
-                                <label className='input-label'>Mobile number</label>
+                                <label className='input-label'>{t("mobileNumber")}</label>
                                 <input name='phone-number' type='text' placeholder='095-356-587' />
-                                <label className='input-label'>Start Date</label>
+                                <label className='input-label'>{t("startDate")}</label>
                                 <input
                                     type='date'
                                     value={startRentDate}
@@ -107,7 +110,7 @@ function RentABoatFormComponent() {
                                     type='hidden'
                                     value={startRentDate}
                                 />
-                                <label className='input-label'>End Date</label>
+                                <label className='input-label'>{t("endDate")}</label>
                                 <input
                                     type='date'
                                     value={endRentDate}
@@ -129,18 +132,18 @@ function RentABoatFormComponent() {
                             </div>
                         </div>
                         <div className='message-checkbox-button-container'>
-                            <label className='input-label'>Message</label>
+                            <label className='input-label'>{t("message")}</label>
                             <textarea name='additional-message' placeholder='Write important additional message here for us.' />
                             <input type='checkbox' id="checkbox1" name="iagree-checkbox" value="Agreed" />
-                            <label htmlFor="checkbox1">I Agree</label>
-                            <p>By sending an inquiry through this form, you acknowledge you are familiar with the privacy policy and agree with it. With this, you also give consent (permission) for the collection and processing of personal data specified in the form, and which are necessary for us to be able to accommodate your request.</p>
+                            <label htmlFor="checkbox1">{t("iAgree")}</label>
+                            <p>{t("iAgreeMessage")}</p>
                             {formError && <div className="error-message">{formError}</div>}
                         </div>
-                        <button type='submit' className='book-the-boat'>Book the boat</button>
+                        <button type='submit' className='book-the-boat'>{t("bookTheBoat")}</button>
                     </form>
                 ) : (
                     <div className="submission-success">
-                        <p className='input-label'>Thank you for renting. We will contact you soon!</p>
+                        <p className='input-label'>{t("tnxForRenting")}</p>
                         {/* You can add additional content or a link here */}
                     </div>
                 )}

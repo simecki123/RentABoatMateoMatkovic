@@ -1,18 +1,18 @@
-import './TermsOfUseTextsStyle.css'
+import './TermsOfUseTextsStyle.css';
+import { useTranslation } from 'react-i18next';
 
 function TermsOfUseTextComponent(){
+    const { t } = useTranslation();
+
     return(
         <>
         <div className="terms-of-use-text-container">
             <div className="terms-of-use-text-small-container">
                 <h1 className="terms-of-use-title">
-                    Terms of use
+                    {t("option3")}
                 </h1>
                 <p className="terms-of-use-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                     Atque autem necessitatibus ipsa fuga harum debitis? Adipisci 
-                     doloribus blanditiis exercitationem praesentium error veritatis,
-                      unde architecto! Quia perferendis eaque necessitatibus aut tempora.
+                    {t("termsOfUseText")}
                 </p>
             </div>
         </div>

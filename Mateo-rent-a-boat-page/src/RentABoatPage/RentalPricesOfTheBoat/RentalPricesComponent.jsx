@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './RentalPricesStyle.css';
+import { useTranslation } from 'react-i18next';
 
 function RentalPricesComponent({ boat }) {
+    const { t } = useTranslation();
+
     const { prices } = boat; // Destructure the 'prices' object from the 'boat' prop
 
     return (
         <div className='rental-prices-big-container'>
-            <h2 className='rental-prices-title'>Rental prices:</h2>
+            <h2 className='rental-prices-title'>{t("rentalPrices")}</h2>
             <div className='rental-prices-main-container'>
                 <div className='rental-prices-small-container'>
                     <ul className='rental-prices-list'>
@@ -22,12 +25,12 @@ function RentalPricesComponent({ boat }) {
                 </div>
                 <div className='rental-prices-small-container'>
                     <ul className='rental-price-list'>
-                        <li className='rental-note'>*Stated prices are for one day rental</li>
-                        <li className='rental-note'>*The half-day rental price is 70% of the full day rental price</li>
-                        <li className='rental-note'>*Skipper price is 100 € per day</li>
-                        <li className='rental-note'>*Fuel is not included in the price</li>
-                        <li className='rental-note'>*The security deposit is 600 euros</li>
-                        <li className='rental-note'>*Payment when taking over the boat</li>
+                        <li className='rental-note'>{t("rentalprice1")}</li>
+                        <li className='rental-note'>{t("rentalprice2")}</li>
+                        <li className='rental-note'>{t("rentalprice3")}</li>
+                        <li className='rental-note'>{t("rentalprice4")}</li>
+                        <li className='rental-note'>{t("rentalprice5")}</li>
+                        <li className='rental-note'>{t("rentalprice6")}</li>
                     </ul>
                 </div>
             </div>

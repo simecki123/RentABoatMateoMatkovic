@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TechnicalCharacteristicsOfTheBoatStyle.css';
+import { useTranslation } from 'react-i18next';
 
 function TechnicalCharacteristiccsOfTheBoat({ boat }) {
+    const { t } = useTranslation();
+
     const { Technical_characteristics, Additional_equipment } = boat; // Destructure 'Technical_characteristics' and 'Additional_equipment' from the 'boat' prop
 
     return (
         <div className="technical-characteristics-and-additional-equipment-container">
-            <h2 className="technical-characteristics-and-additional-equipment-title">Technical characteristics and additional equipment:</h2>
+            <h2 className="technical-characteristics-and-additional-equipment-title">{t("technicalCharacteristicsAndAdditionalEqouipment")}</h2>
             <div className="techical-characteristics-and-additional-equipment-small-container">
                 <div className='technical-characteristics-container'>
-                    <h3 className='technical-characteristics-title'>Technical characteristics:</h3>
+                    <h3 className='technical-characteristics-title'>{t("technicalCharacteristics")}</h3>
                     <ul className='unordered-list-technical-characteristics-and-additional-equipment'>
                         {Object.entries(Technical_characteristics).map(([key, value]) => (
                             <li key={key} className='list-technical-characteristics-and-additional-equipment'>
@@ -20,7 +23,7 @@ function TechnicalCharacteristiccsOfTheBoat({ boat }) {
                     </ul>
                 </div>
                 <div className='additional-equipment-container'>
-                    <h3 className='technical-characteristics-title'>Additional equipment:</h3>
+                    <h3 className='technical-characteristics-title'>{t("AdditionalEquipment")}</h3>
                     <ul className='unordered-list-technical-characteristics-and-additional-equipment'>
                         {Object.entries(Additional_equipment).map(([key, value]) => (
                             <li key={key} className='list-technical-characteristics-and-additional-equipment'>

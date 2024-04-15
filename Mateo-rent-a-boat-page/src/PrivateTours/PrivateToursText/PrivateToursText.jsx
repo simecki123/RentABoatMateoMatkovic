@@ -1,18 +1,18 @@
 import './PrivateTours.css'
+import { useTranslation } from 'react-i18next';
 
 function PrivateToursText() {
+    const { t } = useTranslation();
+
     return(
         <>
             <div className="private-tours-text-container">
             <div className="private-tours-text-small-container">
                 <h1 className="private-tours-title">
-                    Private Tours
+                    {t("option2")}
                 </h1>
                 <p className="private-tours-text">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                     Atque autem necessitatibus ipsa fuga harum debitis? Adipisci 
-                     doloribus blanditiis exercitationem praesentium error veritatis,
-                      unde architecto! Quia perferendis eaque necessitatibus aut tempora.
+                    {t("privateToursText")}
                 </p>
             </div>
         </div>

@@ -5,9 +5,13 @@ import GB from '../assets/britain.jpeg';
 import HR from '../assets/croatia.jpeg';
 import DE from '../assets/germany.jpeg';
 import IT from '../assets/italy.jpeg';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18nn.js';
 
 function HeaderComponent() {
-    const [selectedLanguage, setSelectedLanguage] = useState('🇬🇧');
+    const { t } = useTranslation();
+
+    const [selectedLanguage, setSelectedLanguage] = useState(i18n.language); // Default language code
     const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
     const [navMenuOpen, setNavMenuOpen] = useState(false);
 
@@ -15,23 +19,32 @@ function HeaderComponent() {
     const navMenuRef = useRef(null);
 
     useEffect(() => {
-        const handleOutsideClick = (event) => {
-            // Close language menu if clicked outside
+        i18n.changeLanguage(selectedLanguage); // Set the initial language
+
+        // Function to handle clicks outside the language dropdown
+        const handleClickOutsideLanguage = (event) => {
             if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
                 setLanguageMenuOpen(false);
             }
-            // Close nav menu if clicked outside
+        };
+
+        // Function to handle clicks outside the navigation menu
+        const handleClickOutsideNavMenu = (event) => {
             if (navMenuRef.current && !navMenuRef.current.contains(event.target)) {
                 setNavMenuOpen(false);
             }
         };
 
-        document.addEventListener('mousedown', handleOutsideClick);
+        // Attach event listeners when component mounts
+        document.addEventListener('mousedown', handleClickOutsideLanguage);
+        document.addEventListener('mousedown', handleClickOutsideNavMenu);
 
+        // Clean up event listeners when component unmounts
         return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
+            document.removeEventListener('mousedown', handleClickOutsideLanguage);
+            document.removeEventListener('mousedown', handleClickOutsideNavMenu);
         };
-    }, []);
+    }, [selectedLanguage]);
 
     const handleLanguageSelect = (language) => {
         setSelectedLanguage(language);
@@ -48,13 +61,13 @@ function HeaderComponent() {
 
     const renderLanguageImage = (language) => {
         switch (language) {
-            case '🇭🇷':
+            case 'hr':
                 return HR; // Return the image for Croatia
-            case '🇬🇧':
+            case 'en':
                 return GB; // Return the image for Great Britain
-            case '🇩🇪':
+            case 'ger':
                 return DE; // Return the image for Germany
-            case '🇮🇹':
+            case 'it':
                 return IT; // Return the image for Italy
             default:
                 return null; // No image for other languages
@@ -72,7 +85,7 @@ function HeaderComponent() {
                     <img className="logo" src={logo} alt="Company Logo" />
                 </div>
                 <div className="large-title">
-                    <h1 className="title">August Boats</h1>
+                    <h1 className="title">{t("title")}</h1>
                 </div>
                 <div className="actions">
                     <div className="language-dropdown" ref={languageDropdownRef}>
@@ -81,16 +94,16 @@ function HeaderComponent() {
                         </button>
                         {languageMenuOpen && (
                             <div className="language-options">
-                                <span onClick={() => handleLanguageSelect('🇭🇷')}>
+                                <span onClick={() => handleLanguageSelect('hr')}>
                                     <img className='country-img' src={HR} alt='Croatia' />
                                 </span>
-                                <span onClick={() => handleLanguageSelect('🇬🇧')}>
+                                <span onClick={() => handleLanguageSelect('en')}>
                                     <img className='country-img' src={GB} alt="Great Britain" />
                                 </span>
-                                <span onClick={() => handleLanguageSelect('🇩🇪')}>
+                                <span onClick={() => handleLanguageSelect('ger')}>
                                     <img className='country-img' src={DE} alt="Germany" />
                                 </span>
-                                <span onClick={() => handleLanguageSelect('🇮🇹')}>
+                                <span onClick={() => handleLanguageSelect('it')}>
                                     <img className='country-img' src={IT} alt="Italy" />
                                 </span>
                             </div>
@@ -106,10 +119,10 @@ function HeaderComponent() {
                         </button>
                         {navMenuOpen && (
                             <div className="nav-menu">
-                                <a className='options-header' href='/#boats-for-rent'>Boats for Rent</a>
-                                <a className='options-header' href='/privateTours' >Private Tours</a>
-                                <a className='options-header' href='/termsOfUse' >Terms of use</a>
-                                <a className='options-header' href='/#contacts' >Contacts</a>
+                                <a className='options-header' href='/#boats-for-rent'>{t("option1")}</a>
+                                <a className='options-header' href='/privateTours' >{t("option2")}</a>
+                                <a className='options-header' href='/termsOfUse' >{t("option3")}</a>
+                                <a className='options-header' href='/#contacts' >{t("option4")}</a>
                             </div>
                         )}
                     </div>

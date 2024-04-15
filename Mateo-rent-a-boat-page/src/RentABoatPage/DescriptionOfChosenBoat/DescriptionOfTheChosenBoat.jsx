@@ -5,14 +5,14 @@ import { useTranslation } from 'react-i18next';
 function DescriptionOfTheChoosenBoat({ boat }) {
     const { t } = useTranslation();
 
-    const {description} = boat
+    const {id,} = boat
     return(
         <>
             <div className="boat-description-and-title-container">
                 <h2 className="boat-description-title">{t("description")}</h2>
                 <div className="boat-description-container">
                     <p className="boat-description">
-                        {description}
+                        {t(`boatdesc${id}`)}
                     </p>
                 </div>
             </div>
@@ -22,7 +22,8 @@ function DescriptionOfTheChoosenBoat({ boat }) {
 
 DescriptionOfTheChoosenBoat.propTypes = {
     boat: PropTypes.shape({
-        description: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        
         
     }).isRequired,
 };

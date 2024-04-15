@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 function TechnicalCharacteristiccsOfTheBoat({ boat }) {
     const { t } = useTranslation();
 
-    const { Technical_characteristics, Additional_equipment } = boat; // Destructure 'Technical_characteristics' and 'Additional_equipment' from the 'boat' prop
+    const {id, Technical_characteristics, Additional_equipment } = boat; // Destructure 'Technical_characteristics' and 'Additional_equipment' from the 'boat' prop
 
     return (
         <div className="technical-characteristics-and-additional-equipment-container">
@@ -17,7 +17,7 @@ function TechnicalCharacteristiccsOfTheBoat({ boat }) {
                     <ul className='unordered-list-technical-characteristics-and-additional-equipment'>
                         {Object.entries(Technical_characteristics).map(([key, value]) => (
                             <li key={key} className='list-technical-characteristics-and-additional-equipment'>
-                                {value}
+                                {t(`technicalCharacteristiclist${id}${key}`)}
                             </li>
                         ))}
                     </ul>
@@ -27,7 +27,7 @@ function TechnicalCharacteristiccsOfTheBoat({ boat }) {
                     <ul className='unordered-list-technical-characteristics-and-additional-equipment'>
                         {Object.entries(Additional_equipment).map(([key, value]) => (
                             <li key={key} className='list-technical-characteristics-and-additional-equipment'>
-                                {value}
+                                {t(`additionalEquipmentList${id}${key}`)}
                             </li>
                         ))}
                     </ul>
@@ -39,6 +39,7 @@ function TechnicalCharacteristiccsOfTheBoat({ boat }) {
 
 TechnicalCharacteristiccsOfTheBoat.propTypes = {
     boat: PropTypes.shape({
+        id: PropTypes.number.isRequired,
         Technical_characteristics: PropTypes.object.isRequired, // 'Technical_characteristics' should be an object
         Additional_equipment: PropTypes.object.isRequired, // 'Additional_equipment' should be an object
     }).isRequired,

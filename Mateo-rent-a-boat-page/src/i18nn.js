@@ -52,7 +52,26 @@ i18n
           description: "Description: ",
           technicalCharacteristicsAndAdditionalEqouipment: "Technical characteristics and additional equipment:",
           technicalCharacteristics: "Technical characteristics:",
-          AdditionalEquipment: "Additional equipment:"
+          AdditionalEquipment: "Additional equipment:",
+          boatdesc1: "This is boat named August",
+          
+            technicalCharacteristiclist1char1: "something something something",
+            technicalCharacteristiclist1char2: "something something something",
+            technicalCharacteristiclist1char3: "something something something",
+            technicalCharacteristiclist1char4: "something something something",
+            technicalCharacteristiclist1char5: "something something something",
+            technicalCharacteristiclist1char6: "something something something",
+            technicalCharacteristiclist1char7: "something something something",
+          
+          
+            additionalEquipmentList1equip1: "something something something",
+            additionalEquipmentList1equip2: "something something something",
+            additionalEquipmentList1equip3: "something something something",
+            additionalEquipmentList1equip4: "something something something",
+            additionalEquipmentList1equip5: "something something something",
+            additionalEquipmentList1equip6: "something something something",
+            additionalEquipmentList1equip7: "something something something",
+          
         },
       },
       hr: {
@@ -99,6 +118,26 @@ i18n
           technicalCharacteristicsAndAdditionalEqouipment: "Tehničke karakteristike i dodatna oprema:",
           technicalCharacteristics: "Tehničke karakteristike:",
           AdditionalEquipment: "Dodatna oprema:",
+          boatdesc1: "Ovo je brod zvan August",
+          
+            technicalCharacteristiclist1char1: "nesto nesto nesto",
+            technicalCharacteristiclist1char2: "nesto nesto nesto",
+            technicalCharacteristiclist1char3: "nesto nesto nesto",
+            technicalCharacteristiclist1char4: "nesto nesto nesto",
+            technicalCharacteristiclist1char5: "nesto nesto nesto",
+            technicalCharacteristiclist1char6: "nesto nesto nesto",
+            technicalCharacteristiclist1char7: "nesto nesto nesto",
+          
+          
+            additionalEquipmentList1equip1: "nesto nesto nesto",
+            additionalEquipmentList1equip2: "nesto nesto nesto",
+            additionalEquipmentList1equip3: "nesto nesto nesto",
+            additionalEquipmentList1equip4: "nesto nesto nesto",
+            additionalEquipmentList1equip5: "nesto nesto nesto",
+            additionalEquipmentList1equip6: "nesto nesto nesto",
+            additionalEquipmentList1equip7: "nesto nesto nesto",
+          
+          
         },
       },
       ger: {
@@ -145,6 +184,25 @@ i18n
           technicalCharacteristicsAndAdditionalEqouipment: "Technische Merkmale und zusätzliche Ausstattung:",
           technicalCharacteristics: "Technische Merkmale:",
           AdditionalEquipment: "Zusätzliche Ausstattung:",
+          boatdesc1: "Njemacki This is boat named August",
+          
+            technicalCharacteristiclist1char1: "ger ger ger",
+            technicalCharacteristiclist1char2: "ger ger ger",
+            technicalCharacteristiclist1char3: "ger ger ger",
+            technicalCharacteristiclist1char4: "ger ger ger",
+            technicalCharacteristiclist1char5: "ger ger ger",
+            technicalCharacteristiclist1char6: "ger ger ger",
+            technicalCharacteristiclist1char7: "ger ger ger",
+          
+          
+            additionalEquipmentList1equip1: "ger ger ger",
+            additionalEquipmentList1equip2: "ger ger ger",
+            additionalEquipmentList1equip3: "ger ger ger",
+            additionalEquipmentList1equip4: "ger ger ger",
+            additionalEquipmentList1equip5: "ger ger ger",
+            additionalEquipmentList1equip6: "ger ger ger",
+            additionalEquipmentList1equip7: "ger ger ger",
+          
         },
       },
       it: {
@@ -191,6 +249,25 @@ i18n
           technicalCharacteristicsAndAdditionalEqouipment: "Caratteristiche tecniche ed equipaggiamento aggiuntivo:",
           technicalCharacteristics: "Caratteristiche tecniche:",
           AdditionalEquipment: "Equipaggiamento aggiuntivo:",
+          boatdesc1: "Talijanski This is boat named August",
+          
+            technicalCharacteristiclist1char1: "ita ita ita",
+            technicalCharacteristiclist1char2: "ita ita ita",
+            technicalCharacteristiclist1char3: "ita ita ita",
+            technicalCharacteristiclist1char4: "ita ita ita",
+            technicalCharacteristiclist1char5: "ita ita ita",
+            technicalCharacteristiclist1char6: "ita ita ita",
+            technicalCharacteristiclist1char7: "ita ita ita",
+          
+          
+            additionalEquipmentList1equip1: "ita ita ita",
+            additionalEquipmentList1equip2: "ita ita ita",
+            additionalEquipmentList1equip3: "ita ita ita",
+            additionalEquipmentList1equip4: "ita ita ita",
+            additionalEquipmentList1equip5: "ita ita ita",
+            additionalEquipmentList1equip6: "ita ita ita",
+            additionalEquipmentList1equip7: "ita ita ita",
+          
         },
       },
     },

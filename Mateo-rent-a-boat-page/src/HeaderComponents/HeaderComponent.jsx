@@ -85,7 +85,7 @@ function HeaderComponent() {
                     <img className="logo" src={logo} alt="Company Logo" />
                 </div>
                 <div className="large-title">
-                    <h1 className="title">{t("title")}</h1>
+                    <h1 className="title">August boats</h1>
                 </div>
                 <div className="actions">
                     <div className="language-dropdown" ref={languageDropdownRef}>

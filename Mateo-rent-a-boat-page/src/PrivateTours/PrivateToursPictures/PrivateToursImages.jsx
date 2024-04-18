@@ -1,12 +1,12 @@
 import './PrivateToursImagesStyle.css';
 import React, { useState } from 'react';
 
-import boat1 from '../../assets/boat1.jpg';
-import boat2 from '../../assets/boat2.jpg';
-import boat3 from '../../assets/boat3.jpg';
-import boat4 from '../../assets/boat4.jpg';
-import boat5 from '../../assets/boat5.jpg';
-import boat6 from '../../assets/boat6.jpg';
+import boat1 from '../../assets/_DSC4791.jpg';
+import boat2 from '../../assets/_DSC4804.jpg';
+import boat3 from '../../assets/_DSC4810.jpg';
+import boat4 from '../../assets/_DSC4831.jpg';
+import boat5 from '../../assets/_DSC4839.jpg';
+import boat6 from '../../assets/_DSC4857.jpg';
 
 function PrivateToursImages() {
     const boatImages = [boat1, boat2, boat3, boat4, boat5, boat6];

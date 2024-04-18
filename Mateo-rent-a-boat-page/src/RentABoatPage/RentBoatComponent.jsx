@@ -13,7 +13,7 @@ function RentBoatComponent() {
 
     // Find the boat with the matching 'id' from the URL in the boatsData array
     const selectedBoat = boatsData.find((boat) => boat.id === parseInt(id));
-
+ 
     if (!selectedBoat) {
         return <div>Boat not found</div>;
     }

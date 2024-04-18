@@ -6,12 +6,12 @@ import facebook from '../assets/facebook.png';
 import watsup from '../assets/whatsapp.png';
 
 // Import boat images
-import boat1 from '../assets/boat1.jpg';
-import boat2 from '../assets/boat2.jpg';
-import boat3 from '../assets/boat3.jpg';
-import boat4 from '../assets/boat4.jpg';
-import boat5 from '../assets/boat5.jpg';
-import boat6 from '../assets/boat6.jpg';
+import boat1 from '../assets/DJI_0792.jpg';
+import boat2 from '../assets/DJI_0788.jpg';
+import boat3 from '../assets/DJI_0835.jpg';
+import boat4 from '../assets/DJI_0811.jpg';
+import boat5 from '../assets/_DSC4947.jpg';
+import boat6 from '../assets/_DSC4917.jpg';
 import { useTranslation } from 'react-i18next';
 
 function BoatPictureComponent() {

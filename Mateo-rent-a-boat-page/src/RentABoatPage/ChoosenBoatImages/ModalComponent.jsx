@@ -1,28 +1,39 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes for prop validation
+import PropTypes from 'prop-types';
 import './Modal.css';
 
-function Modal({ images, initialIndex, onClose }) {
+function Modal({ media, initialIndex, onClose }) {
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? media.length - 1 : prevIndex - 1));
     };
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setCurrentIndex((prevIndex) => (prevIndex === media.length - 1 ? 0 : prevIndex + 1));
     };
+
+    const currentMedia = media[currentIndex];
+    const isVideo = currentMedia.includes('.mp4');
 
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                 <button className="modal-close" onClick={onClose}>X</button>
-                <div className="modal-image-container">
-                    <img className="modal-image" src={images[currentIndex]} alt={`Boat ${currentIndex + 1}`} />
-                </div>
+                {isVideo ? (
+                    <div className="modal-image-container">
+                        <video className="modal-image" src={currentMedia} controls autoPlay loop>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                ) : (
+                    <div className="modal-image-container">
+                        <img className="modal-image" src={currentMedia} alt={`Media ${currentIndex + 1}`} />
+                    </div>
+                )}
                 <div className="modal-navigation">
                     <button className="modal-nav-button" onClick={handlePrev}>←</button>
-                    <span>{currentIndex + 1} / {images.length}</span>
+                    <span>{currentIndex + 1} / {media.length}</span>
                     <button className="modal-nav-button" onClick={handleNext}>→</button>
                 </div>
             </div>
@@ -30,12 +41,10 @@ function Modal({ images, initialIndex, onClose }) {
     );
 }
 
-// Prop Types Validation
 Modal.propTypes = {
-    images: PropTypes.arrayOf(PropTypes.string).isRequired, // Array of image URLs (strings)
-    initialIndex: PropTypes.number.isRequired, // Initial index of the image to display
+    media: PropTypes.arrayOf(PropTypes.string).isRequired, // Array of image URLs and/or video URLs
+    initialIndex: PropTypes.number.isRequired, // Initial index of the media to display
     onClose: PropTypes.func.isRequired, // Function to handle modal close
 };
 
 export default Modal;
-

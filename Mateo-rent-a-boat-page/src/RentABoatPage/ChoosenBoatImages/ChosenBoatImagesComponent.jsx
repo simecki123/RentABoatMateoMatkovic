@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import './ChosenBoatImages.css'; 
+import './ChosenBoatImages.css';
 import Modal from './ModalComponent';
 
 function ChosenBoatImagesComponent({ boat }) {
-    const { img, images } = boat; // Destructure the 'img' and 'images' properties from the 'boat' prop
-    const allImages = Object.values(images); // Convert images object values to an array
+    const { img, images, videos } = boat;
+    const allImages = Object.values(images);
+    const allVideos = Object.values(videos);
 
-    const [currentImage, setCurrentImage] = useState(img);
-    const [smallImages] = useState(allImages.slice(0, 5)); // Slice to get the first 5 small images
+    const [currentMedia, setCurrentMedia] = useState({
+        type: 'video',
+        src: allVideos.length > 0 ? allVideos[0] : null,
+    });
+
+    const [smallImages] = useState(allImages.slice(0, 5));
     const [visibleImagesIndex, setVisibleImagesIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
-    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [selectedMediaIndex, setSelectedMediaIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             rotateVisibleImages();
-        }, 4000); // Rotate images every 4 seconds (adjust as needed)
+        }, 4000);
+
+        // Cleanup function for useEffect
         return () => clearInterval(interval);
     }, [visibleImagesIndex]);
 
@@ -24,9 +31,22 @@ function ChosenBoatImagesComponent({ boat }) {
         setVisibleImagesIndex((prevIndex) => (prevIndex + 1) % smallImages.length);
     };
 
-    const handleImageClick = (image, index) => {
+    const handleMediaClick = (media, index) => {
         setShowModal(true);
-        setSelectedImageIndex(index);
+        setSelectedMediaIndex(index);
+
+        // Determine if the clicked media is an image or video
+        if (media.endsWith('.jpg')) {
+            setCurrentMedia({
+                type: 'image',
+                src: media,
+            });
+        } else if (media.endsWith('.mp4')) {
+            setCurrentMedia({
+                type: 'video',
+                src: media,
+            });
+        }
     };
 
     const handleCloseModal = () => {
@@ -35,13 +55,17 @@ function ChosenBoatImagesComponent({ boat }) {
 
     return (
         <div className="boat-images-container">
-            <div className="chosen-boat-big-image-container" onClick={() => handleImageClick(currentImage, 0)}>
-                <img className="chosen-boat-big-image" src={currentImage} alt="Big Boat" />
+            <div className="chosen-boat-big-image-container" onClick={() => handleMediaClick(currentMedia.src, 0)}>
+                
+                    <video className="chosen-boat-big-image" src={allVideos[0]} autoPlay loop muted>
+                        Your browser does not support the video tag.
+                    </video>
+                
             </div>
             <div className="chosen-boat-small-images-container">
                 {smallImages.map((image, index) => {
                     const offsetIndex = (index + visibleImagesIndex) % smallImages.length;
-                    const isVisible = index < 4; // Show the first 4 small images
+                    const isVisible = index < 4;
 
                     return (
                         <div
@@ -50,15 +74,15 @@ function ChosenBoatImagesComponent({ boat }) {
                             style={{
                                 transition: 'opacity 0.3s ease-in-out',
                                 opacity: isVisible ? 1 : 0,
-                                transform: `translateX(${isVisible ? 0 : -100}%)`, // Slide out to the left
-                                pointerEvents: isVisible ? 'auto' : 'none', // Enable/disable click events
+                                transform: `translateX(${isVisible ? 0 : -100}%)`,
+                                pointerEvents: isVisible ? 'auto' : 'none',
                             }}
                         >
                             <img
                                 className="chosen-boat-small-image"
                                 src={smallImages[offsetIndex]}
                                 alt={`Boat ${offsetIndex + 1}`}
-                                onClick={() => handleImageClick(smallImages[offsetIndex], offsetIndex + 1)}
+                                onClick={() => handleMediaClick(smallImages[offsetIndex], offsetIndex + 1)}
                             />
                         </div>
                     );
@@ -66,8 +90,8 @@ function ChosenBoatImagesComponent({ boat }) {
             </div>
             {showModal && (
                 <Modal
-                    images={allImages}
-                    initialIndex={selectedImageIndex}
+                    media={currentMedia.type === 'image' ? allImages.concat(allVideos) : allVideos.concat(allImages)}
+                    initialIndex={selectedMediaIndex}
                     onClose={handleCloseModal}
                 />
             )}
@@ -78,7 +102,8 @@ function ChosenBoatImagesComponent({ boat }) {
 ChosenBoatImagesComponent.propTypes = {
     boat: PropTypes.shape({
         img: PropTypes.string.isRequired,
-        images: PropTypes.objectOf(PropTypes.string).isRequired, // 'images' should be an object of strings (image URLs)
+        images: PropTypes.objectOf(PropTypes.string).isRequired,
+        videos: PropTypes.objectOf(PropTypes.string).isRequired,
     }).isRequired,
 };
 

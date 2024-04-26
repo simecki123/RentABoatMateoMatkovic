@@ -33,19 +33,23 @@
 }
 
 .text-container {
-    text-align: center;
+    text-align: left; /* Align text to the left */
+    padding: 0 20px; /* Add horizontal padding */
 }
 
 .about-us-title {
     color: #fcfae6;
     font-size: 2rem;
     margin-bottom: 10px;
+    text-align: center; /* Center align the title */
 }
 
 .about-us-text {
     font-size: 1rem;
     line-height: 1.6;
+    text-align: justify; /* Justify text for a neat appearance */
 }
+
 
 /* Media Query for Responsive Design */
 @media (max-width: 768px) {

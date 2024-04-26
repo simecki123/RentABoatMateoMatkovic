@@ -6,6 +6,8 @@ import boat4 from '../assets/_DSC4831.jpg';
 import boat5 from '../assets/_DSC4839.jpg';
 import boat6 from '../assets/_DSC4857.jpg';
 
+import video1 from '../assets/MatinBrod2.mp4';
+
 const boatsData = [
     {
       id: 1,
@@ -57,6 +59,10 @@ const boatsData = [
         "boat4": boat4,
         "boat5": boat5,
         "boat6": boat6,
+      },
+
+      videos: {
+        "video1": video1,
       }
     },
     

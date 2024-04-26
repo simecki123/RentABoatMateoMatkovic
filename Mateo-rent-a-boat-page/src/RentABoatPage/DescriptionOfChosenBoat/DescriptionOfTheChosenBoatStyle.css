@@ -16,10 +16,10 @@
 .boat-description-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align text to the left */
     background-color: #1e1e2ecc; /* Dark overlay for text contrast */
     color: #ffffff;
-    padding: 20px;
+    padding: 30px; /* Add padding around the container */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     width: 80%;
@@ -28,8 +28,12 @@
 
 /* Boat Description Text */
 .boat-description {
+    font-size: 1.2rem;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
     color: #fff;
+    text-align: justify; /* Justify text for neat appearance */
+    padding: 10px 0; /* Add padding above and below the text */
 }
 
 /* Media Query for Smaller Screens (e.g., Smartphones) */

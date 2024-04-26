@@ -77,7 +77,7 @@ const boatsData = [
         "equip7": "Bathing ladder",
         "equip8": "USB socket",
         "equip9": "GPS, map of Adriatic sea, Fishfinder and depth sonder",
-        "equip10": "Radio bluetooth/MP3 with speakers",
+        "equip10": "Radio bluetooth/MP3 with speakers", 
         "equip11": "Fridge",
         "equip12": "Electric windlass",
         "equip13": "Snorkelling equipment",

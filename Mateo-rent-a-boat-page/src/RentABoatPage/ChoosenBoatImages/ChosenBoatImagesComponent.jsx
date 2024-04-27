@@ -4,7 +4,7 @@ import './ChosenBoatImages.css';
 import Modal from './ModalComponent';
 
 function ChosenBoatImagesComponent({ boat }) {
-    const { img, images, videos } = boat;
+    const { images, videos } = boat;
     const allImages = Object.values(images);
     const allVideos = Object.values(videos);
 
@@ -56,11 +56,13 @@ function ChosenBoatImagesComponent({ boat }) {
     return (
         <div className="boat-images-container">
             <div className="chosen-boat-big-image-container" onClick={() => handleMediaClick(currentMedia.src, 0)}>
-                
-                    <video className="chosen-boat-big-image" src={allVideos[0]} autoPlay loop muted>
+                {currentMedia.type === 'image' ? (
+                    <img className="chosen-boat-big-image" src={currentMedia.src} alt="Boat" loading="lazy" />
+                ) : (
+                    <video className="chosen-boat-big-image" src={currentMedia.src} autoPlay loop muted>
                         Your browser does not support the video tag.
                     </video>
-                
+                )}
             </div>
             <div className="chosen-boat-small-images-container">
                 {smallImages.map((image, index) => {
@@ -83,6 +85,7 @@ function ChosenBoatImagesComponent({ boat }) {
                                 src={smallImages[offsetIndex]}
                                 alt={`Boat ${offsetIndex + 1}`}
                                 onClick={() => handleMediaClick(smallImages[offsetIndex], offsetIndex + 1)}
+                                loading="lazy"
                             />
                         </div>
                     );
@@ -101,7 +104,6 @@ function ChosenBoatImagesComponent({ boat }) {
 
 ChosenBoatImagesComponent.propTypes = {
     boat: PropTypes.shape({
-        img: PropTypes.string.isRequired,
         images: PropTypes.objectOf(PropTypes.string).isRequired,
         videos: PropTypes.objectOf(PropTypes.string).isRequired,
     }).isRequired,

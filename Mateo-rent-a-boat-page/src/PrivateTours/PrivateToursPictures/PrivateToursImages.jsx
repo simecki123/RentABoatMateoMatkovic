@@ -1,5 +1,5 @@
 import './PrivateToursImagesStyle.css';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import boat1 from '../../assets/_DSC4791.jpg';
 import boat2 from '../../assets/_DSC4804.jpg';
@@ -8,46 +8,92 @@ import boat4 from '../../assets/_DSC4831.jpg';
 import boat5 from '../../assets/_DSC4839.jpg';
 import boat6 from '../../assets/_DSC4857.jpg';
 
-function PrivateToursImages() {
-    const boatImages = [boat1, boat2, boat3, boat4, boat5, boat6];
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+import video1 from '../../assets/MatinBrod1.mp4';
 
-    const handleChangeImage = () => {
-        const nextIndex = (currentImageIndex + 1) % boatImages.length;
-        setCurrentImageIndex(nextIndex);
+
+function PrivateToursImages() {
+    
+
+    const boatImages = [
+        { type: 'video', url: video1 },
+        { type: 'image', url: boat1 },
+        { type: 'image', url: boat2 },
+        { type: 'image', url: boat3 },
+        { type: 'image', url: boat4 },
+        { type: 'image', url: boat5 },
+        { type: 'image', url: boat6 }
+    ];
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const videoRef = useRef(null); // Create a ref using useRef hook
+
+    const handleChangeImage = (direction) => {
+        if (direction === 'next') {
+            const nextIndex = (currentImageIndex + 1) % boatImages.length;
+            setCurrentImageIndex(nextIndex);
+        } else if (direction === 'prev') {
+            const prevIndex = (currentImageIndex - 1 + boatImages.length) % boatImages.length;
+            setCurrentImageIndex(prevIndex);
+        }
     };
 
-    return(
+    useEffect(() => {
+        const videoElement = videoRef.current;
+    
+        if (videoElement) {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+    
+            const callback = (entries) => {
+                entries.forEach(entry => {
+                    if (entry.target === videoElement) {
+                        if (entry.isIntersecting) {
+                            videoElement.play();
+                        } else {
+                            videoElement.pause();
+                        }
+                    }
+                });
+            };
+    
+            const observer = new IntersectionObserver(callback, options);
+            observer.observe(videoElement);
+    
+            return () => {
+                observer.unobserve(videoElement);
+            };
+        }
+    }, [videoRef]);
 
-        <>
-
-            <div className="private-tours-images-container">
+    return (
+        <div className="boat-picture-container">
+            <div className="boat-image-wrapper">
                 
-                
-                <div className="location-image-wrapper">
-
-                <div className="custom-shape-divider-top-1712770032">
-                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                    </svg>
-                </div>
-                    
-                    
-                    <img className="location-image" src={boatImages[currentImageIndex]} alt="Boat" />
-                    
-                    <button className="change-location-image-btn" onClick={handleChangeImage}>&#8680;</button>
-                    
-                </div>
-
-                    <div className="custom-shape-divider-bottom-1712770095">
-                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-                        </svg>
-                    </div>
-                
+                <button className="change-image-btn left-btn" onClick={() => handleChangeImage('prev')}>
+                    &#8592;
+                </button>
+                {boatImages[currentImageIndex].type === 'image' ? (
+                    <img className="boat-image" src={boatImages[currentImageIndex].url} alt="Boat" />
+                ) : (
+                    <video
+                        ref={videoRef}
+                        className="boat-image"
+                        autoPlay
+                        loop
+                        muted
+                        onLoadedData={() => videoRef.current.play()}
+                    >
+                        <source src={boatImages[currentImageIndex].url} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                )}
+                <button className="change-image-btn" onClick={() => handleChangeImage('next')}>&#8594;</button>
             </div>
-
-        </>
+            
+        </div>
     );
 }
 

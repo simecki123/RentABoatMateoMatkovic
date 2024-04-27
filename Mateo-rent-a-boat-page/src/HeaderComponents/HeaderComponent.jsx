@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './HeaderComponent.css';
-import logo from '../assets/MatinLogo.png';
-import GB from '../assets/britain.jpeg';
-import HR from '../assets/croatia.jpeg';
-import DE from '../assets/germany.jpeg';
-import IT from '../assets/italy.jpeg';
+import logo from '../assets/MatinLogo.jpg';
+import GB from '../assets/britain.jpg';
+import HR from '../assets/croatia.jpg';
+import DE from '../assets/germany.jpg';
+import IT from '../assets/italy.jpg';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18nn.js';
 

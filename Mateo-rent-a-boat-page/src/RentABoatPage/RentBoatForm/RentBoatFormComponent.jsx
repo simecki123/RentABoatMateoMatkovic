@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './RentBoatFormStyle.css';
-import logo from '../../assets/MatinLogo.png';
+import logo from '../../assets/MatinLogo.jpg';
 import { useTranslation } from 'react-i18next';
 
 function RentABoatFormComponent() {

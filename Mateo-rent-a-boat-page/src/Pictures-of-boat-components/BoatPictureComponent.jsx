@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './BoatPictureStyle.css';
 
-import instagram from '../assets/instagram.png';
-import facebook from '../assets/facebook.png';
-import watsup from '../assets/whatsapp.png';
+import instagram from '../assets/instagram.jpg';
+import facebook from '../assets/facebook.jpg';
+import watsup from '../assets/whatsapp.jpg';
 
-// Import boat images
+// Import boat images (optimized versions)
 import boat1 from '../assets/DJI_0792.jpg';
 import boat2 from '../assets/DJI_0788.jpg';
 import boat3 from '../assets/DJI_0835.jpg';
@@ -13,7 +13,7 @@ import boat4 from '../assets/DJI_0811.jpg';
 import boat5 from '../assets/_DSC4947.jpg'; 
 import boat6 from '../assets/_DSC4917.jpg';
 
-// Import boat videos (example URLs)
+// Import boat videos (optimized versions)
 import video1 from '../assets/MatinBrod1.mp4';
 
 import { useTranslation } from 'react-i18next';
@@ -32,7 +32,7 @@ function BoatPictureComponent() {
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const videoRef = useRef(null); // Create a ref using useRef hook
+    const videoRef = useRef(null);
 
     const handleChangeImage = (direction) => {
         if (direction === 'next') {
@@ -74,7 +74,8 @@ function BoatPictureComponent() {
             };
         }
     }, [videoRef]);
-    
+
+    const currentImage = boatImages[currentImageIndex];
 
     return (
         <div className="boat-picture-container">
@@ -87,8 +88,8 @@ function BoatPictureComponent() {
                 <button className="change-image-btn left-btn" onClick={() => handleChangeImage('prev')}>
                     &#8592;
                 </button>
-                {boatImages[currentImageIndex].type === 'image' ? (
-                    <img className="boat-image" src={boatImages[currentImageIndex].url} alt="Boat" />
+                {currentImage.type === 'image' ? (
+                    <img className="boat-image" src={currentImage.url} alt="Boat" loading="lazy" />
                 ) : (
                     <video
                         ref={videoRef}
@@ -98,7 +99,7 @@ function BoatPictureComponent() {
                         muted
                         onLoadedData={() => videoRef.current.play()}
                     >
-                        <source src={boatImages[currentImageIndex].url} type="video/mp4" />
+                        <source src={currentImage.url} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 )}

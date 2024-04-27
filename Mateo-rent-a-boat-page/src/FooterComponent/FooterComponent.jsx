@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../assets/MatinLogo.png';
-import instagram from '../assets/instagram.png';
-import facebook from '../assets/facebook.png';
+import logo from '../assets/MatinLogo.jpg';
+import instagram from '../assets/instagram.jpg';
+import facebook from '../assets/facebook.jpg';
 import './FooterComponent.css'; // Import CSS for FooterComponent
 import { useTranslation } from 'react-i18next';
 

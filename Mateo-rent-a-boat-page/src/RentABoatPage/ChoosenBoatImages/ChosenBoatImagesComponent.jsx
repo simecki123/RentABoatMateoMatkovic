@@ -56,13 +56,11 @@ function ChosenBoatImagesComponent({ boat }) {
     return (
         <div className="boat-images-container">
             <div className="chosen-boat-big-image-container" onClick={() => handleMediaClick(currentMedia.src, 0)}>
-                {currentMedia.type === 'image' ? (
-                    <img className="chosen-boat-big-image" src={currentMedia.src} alt="Boat" loading="lazy" />
-                ) : (
-                    <video className="chosen-boat-big-image" src={currentMedia.src} autoPlay loop muted>
+                
+                    <video className="chosen-boat-big-image" src={allVideos[0]} autoPlay loop muted>
                         Your browser does not support the video tag.
                     </video>
-                )}
+                
             </div>
             <div className="chosen-boat-small-images-container">
                 {smallImages.map((image, index) => {

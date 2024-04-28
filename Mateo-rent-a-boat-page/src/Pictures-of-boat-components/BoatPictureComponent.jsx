@@ -77,6 +77,13 @@ function BoatPictureComponent() {
 
     const currentImage = boatImages[currentImageIndex];
 
+    const openWhatsAppChat = () => {
+        const phoneNumber = '+385919887215'; // Your phone number including country code
+        const url = `https://wa.me/${phoneNumber}`;
+
+        window.open(url, '_blank'); // Open WhatsApp chat link in a new tab
+    };
+
     return (
         <div className="boat-picture-container">
             <div className="boat-image-wrapper">
@@ -114,7 +121,9 @@ function BoatPictureComponent() {
                                 <button className='social-media-button'><img className='social-media-icon' src={facebook} alt="Facebook" /></button>
                             </a>
                             <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
-                                <button className='social-media-button'><img className='social-media-icon' src={watsup} alt="WhatsApp" /></button>
+                                <button className='social-media-button' onClick={openWhatsAppChat}>
+                                    <img className='social-media-icon' src={watsup} alt="WhatsApp" />
+                                </button>
                             </a>
                         </div>
                     </div>

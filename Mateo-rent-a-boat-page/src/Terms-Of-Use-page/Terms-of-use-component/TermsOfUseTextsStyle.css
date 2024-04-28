@@ -21,6 +21,11 @@
     margin-bottom: 10px;
 }
 
+.terms-of-use-title2 {
+    font-size: 22px;
+    color: black;
+}
+
 .terms-of-use-text {
     font-size: 16px;
     color: #ffffff; /* White text */

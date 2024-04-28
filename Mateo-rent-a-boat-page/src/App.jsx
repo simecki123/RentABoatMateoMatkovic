@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPageComponent />} />
         <Route path='/termsOfUse' element={<TermsOfUsePage />} />
-        <Route path='/privateTours' element={<PrivateTours />} />
+        
         <Route path="/rentBoat/:id" element={<RentBoatComponent />} />
       </Routes>
     </Router>

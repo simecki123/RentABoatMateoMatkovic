@@ -120,7 +120,7 @@ function HeaderComponent() {
                         {navMenuOpen && (
                             <div className="nav-menu">
                                 <a className='options-header' href='/#boats-for-rent'>{t("option1")}</a>
-                                <a className='options-header' href='/privateTours' >{t("option2")}</a>
+                                
                                 <a className='options-header' href='/termsOfUse' >{t("option3")}</a>
                                 <a className='options-header' href='/#contacts' >{t("option4")}</a>
                             </div>

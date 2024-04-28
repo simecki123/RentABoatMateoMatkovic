@@ -31,7 +31,7 @@ function FooterComponent() {
                     </div>
                     <div className="footer-links">
                         <p ><a className='options' href='#boats-for-rent'>{t("option1")}</a></p>
-                        <p ><a className='options' href='/privateTours' >{t("option2")}</a></p>
+                        
                         <p><a className='options' href='/termsOfUse' >{t("option3")}</a></p>
                         <p><a className='options' href='#contacts' >{t("option4")}</a></p>
                     </div>

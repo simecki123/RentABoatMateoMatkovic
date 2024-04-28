@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePic from '../assets/profile-pic.jpg';
+import profilePic from '../assets/MatinLogo.jpg';
 import './AboutUsStyle.css'; // Import CSS for AboutUsComponent
 import { useTranslation } from 'react-i18next';
 

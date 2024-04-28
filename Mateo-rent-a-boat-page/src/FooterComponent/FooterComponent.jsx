@@ -26,9 +26,8 @@ function FooterComponent() {
                 <div id='contacts' className="info-section">
                     <div className="contacts">
                         <p>📌 Put Plovanije 5 Zadar Croatia</p>
-                        <p>📞 56987233 Mateo</p>
-                        <p>📞 256489 Loreta</p>
-                        <p>📧 mateo15@gmail.com</p>
+                        <p>📞 +385 91-988-7215 Mateo</p>
+                        <p>📧 augustboatszadar@gmail.com</p>
                     </div>
                     <div className="footer-links">
                         <p ><a className='options' href='#boats-for-rent'>{t("option1")}</a></p>

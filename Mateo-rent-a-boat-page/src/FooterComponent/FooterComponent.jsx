@@ -26,7 +26,7 @@ function FooterComponent() {
                 <div id='contacts' className="info-section">
                     <div className="contacts">
                         <p>📌 Put Plovanije 5 Zadar Croatia</p>
-                        <p>📞 +385 91-988-7215 Mateo</p>
+                        <p>📞 +385 91 9887 215 Mateo</p>
                         <p>📧 augustboatszadar@gmail.com</p>
                     </div>
                     <div className="footer-links">

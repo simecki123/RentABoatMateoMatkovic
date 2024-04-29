@@ -39,7 +39,8 @@ function RentABoatFormComponent() {
         ];
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regex for email validation
-        const phoneRegex = /^\d{3}-\d{3}-\d{3}$/; // Regex for mobile number (e.g., 095-356-587)
+        const phoneRegex = /^(\+\d{1,3})?[-. (]?\d{2,4}[-. )]?(\d{2,3}[-. ]?)?\d{3,5}[-. ]?\d{3,5}$/;
+
 
         for (const { field, errorMessage } of validationRules) {
             const value = formData.get(field);
@@ -98,7 +99,7 @@ function RentABoatFormComponent() {
                                 <label className='input-label'>{t("Email")}</label>
                                 <input name='email' type='text' placeholder='something@gmail.com' />
                                 <label className='input-label'>{t("mobileNumber")}</label>
-                                <input name='phone-number' type='text' placeholder='095-356-587' />
+                                <input name='phone-number' type='text' placeholder='095-356-5878' />
                                 <label className='input-label'>{t("startDate")}</label>
                                 <input
                                     type='date'

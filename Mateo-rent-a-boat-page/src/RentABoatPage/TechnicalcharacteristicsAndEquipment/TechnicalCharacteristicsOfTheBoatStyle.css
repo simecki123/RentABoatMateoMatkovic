@@ -51,12 +51,12 @@
 @media (max-width: 768px) {
     .techical-characteristics-and-additional-equipment-small-container {
         flex-direction: column;
-        width: 100%;
+        width: 80%;
     }
 
     .technical-characteristics-container,
     .additional-equipment-container {
-        width: 100%;
+        width: 80%;
     }
 
     .technical-characteristics-and-additional-equipment-title {

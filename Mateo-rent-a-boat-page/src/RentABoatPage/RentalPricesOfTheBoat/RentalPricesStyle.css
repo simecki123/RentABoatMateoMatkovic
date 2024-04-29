@@ -65,6 +65,7 @@ hr {
 /* Media Query for Smaller Screens (e.g., Smartphones) */
 @media (max-width: 768px) {
     .rental-prices-big-container {
+        width: 80%;
         background-color: #fcfae6;
         padding: 0px;
         border-radius: 0px;
@@ -74,10 +75,14 @@ hr {
 
     .rental-prices-main-container {
         flex-direction: column; /* Stack containers vertically on smaller screens */
+        
+        
     }
 
     .rental-prices-small-container {
         width: 100%; /* Full width for smaller screens */
         margin-bottom: 20px; /* Add spacing between containers */
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }

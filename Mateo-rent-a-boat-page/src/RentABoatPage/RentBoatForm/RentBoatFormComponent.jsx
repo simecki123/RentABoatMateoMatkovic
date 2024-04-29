@@ -62,10 +62,11 @@ function RentABoatFormComponent() {
         }
 
         // Additional validation for date range
-        if (new Date(endRentDate) <= new Date(startRentDate)) {
-            setFormError('End date must be after the start date.');
+        if (new Date(endRentDate) < new Date(startRentDate)) {
+            setFormError('End date must be after or the same as the start date.');
             return;
         }
+
 
         // Submit the form
         try {

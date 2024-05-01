@@ -114,10 +114,10 @@ function BoatPictureComponent() {
                     <div className="centered">
                         <h2 className='rent-a-boat-title'>{t("rentABoat")}</h2>
                         <div className="social-media-icons">
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.instagram.com/augustboats?igsh=dWQ3OXc0YzRwNXFt" target="_blank" rel="noopener noreferrer">
                                 <button className='social-media-button'><img className='social-media-icon' src={instagram} alt="Instagram" /></button>
                             </a>
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.facebook.com/share/Cxe6H33hC2Gib6m7/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
                                 <button className='social-media-button'><img className='social-media-icon' src={facebook} alt="Facebook" /></button>
                             </a>
                             <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">

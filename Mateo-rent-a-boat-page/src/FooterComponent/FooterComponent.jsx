@@ -8,13 +8,14 @@ import { useTranslation } from 'react-i18next';
 function FooterComponent() {
     const { t } = useTranslation();
 
-
+    // Wisit instagram profile
     const handleInstagramClick = () => {
-        window.open('https://www.instagram.com', '_blank');
+        window.open('https://www.instagram.com/augustboats?igsh=dWQ3OXc0YzRwNXFt', '_blank');
     };
 
+    // Wisit facebook profile
     const handleFacebookClick = () => {
-        window.open('https://www.facebook.com', '_blank');
+        window.open('https://www.facebook.com/share/Cxe6H33hC2Gib6m7/?mibextid=LQQJ4d', '_blank');
     };
 
     return (

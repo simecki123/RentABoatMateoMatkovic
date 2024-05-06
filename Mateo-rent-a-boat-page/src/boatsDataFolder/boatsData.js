@@ -48,7 +48,7 @@ import video1 from '../assets/MatinBrod2.mp4';
 const boatsData = [
     {
       id: 1,
-      img: boat1, // Example image import
+      img: boat35, // Example image import
       name: 'August',
       length: '7.15m',
       width: '2.50m',

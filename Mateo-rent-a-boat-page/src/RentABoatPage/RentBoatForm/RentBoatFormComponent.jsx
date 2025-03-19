@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+/* eslint-disable no-undef */
+import { useState } from 'react';
 import './RentBoatFormStyle.css';
 import logo from '../../assets/MatinLogo.jpg';
 import { useTranslation } from 'react-i18next';
 
 function RentABoatFormComponent() {
     const { t } = useTranslation();
+    const ACCESS_KEY = process.env.REACT_APP_WEBFORM_ACCESS_KEY;
 
     const [startRentDate, setStartRentDate] = useState('');
     const [endRentDate, setEndRentDate] = useState('');
@@ -126,7 +128,7 @@ function RentABoatFormComponent() {
                                 <input
                                     type="hidden"
                                     name="access_key"
-                                    value="07e223af-d705-4551-a5f6-fcd705f6d17b"
+                                    value={ACCESS_KEY}
                                 />
                             </div>
                             <div className='logo-in-form-container'>

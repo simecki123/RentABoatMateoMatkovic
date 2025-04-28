@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 function RentABoatFormComponent() {
     const { t } = useTranslation();
-    const ACCESS_KEY = process.env.REACT_APP_WEBFORM_ACCESS_KEY;
+    const ACCESS_KEY = import.meta.env.VITE_WEBFORM_ACCESS_KEY;
 
     const [startRentDate, setStartRentDate] = useState('');
     const [endRentDate, setEndRentDate] = useState('');
